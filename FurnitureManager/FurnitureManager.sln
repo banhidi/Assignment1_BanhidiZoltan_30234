@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureManager", "FurnitureManager\FurnitureManager.csproj", "{081D5863-7EF0-47DA-8E6D-97AD07597CC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "..\Controller\Controller\Controller.csproj", "{6B273AC6-01F8-4D1C-A6CE-5DB8821DF507}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "..\DataManagement\DataManagement\DataManagement.csproj", "{F6C4338E-1C97-4388-AD43-962A502A256F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{081D5863-7EF0-47DA-8E6D-97AD07597CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{081D5863-7EF0-47DA-8E6D-97AD07597CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{081D5863-7EF0-47DA-8E6D-97AD07597CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{081D5863-7EF0-47DA-8E6D-97AD07597CC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B273AC6-01F8-4D1C-A6CE-5DB8821DF507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B273AC6-01F8-4D1C-A6CE-5DB8821DF507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B273AC6-01F8-4D1C-A6CE-5DB8821DF507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B273AC6-01F8-4D1C-A6CE-5DB8821DF507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6C4338E-1C97-4388-AD43-962A502A256F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6C4338E-1C97-4388-AD43-962A502A256F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6C4338E-1C97-4388-AD43-962A502A256F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6C4338E-1C97-4388-AD43-962A502A256F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

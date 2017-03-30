@@ -1,0 +1,6 @@
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagement\bin\Debug\DataManagement.dll.config
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagement\bin\Debug\DataManagement.dll
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagement\bin\Debug\DataManagement.pdb
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagement\bin\Debug\MySql.Data.dll
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagement\obj\Debug\DataManagement.dll
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagement\obj\Debug\DataManagement.pdb
