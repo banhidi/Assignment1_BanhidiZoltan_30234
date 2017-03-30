@@ -65,7 +65,8 @@ namespace FurnitureManager {
                 Order o = (Order)orderGrid.SelectedRows[0].DataBoundItem;
                 shoppingCartGrid.AutoGenerateColumns = false;
                 shoppingCartGrid.DataSource = o.getShoppingCart();
-            }
+            } else
+                shoppingCartGrid.DataSource = null;
         }
 
         private void signOutButton_Click(object sender, EventArgs e) {
@@ -169,9 +170,11 @@ namespace FurnitureManager {
         }
 
         private void addNewItemButton_Click(object sender, EventArgs e) {
-            ShoppingCartSelector selector = new ShoppingCartSelector(this);
-            selector.Show();
-            this.Enabled = false;
+            if (orderGrid.SelectedRows.Count == 1) {
+                ShoppingCartSelector selector = new ShoppingCartSelector(this);
+                selector.Show();
+                this.Enabled = false;
+            }
         }
 
         private void modifyItemButton_Click(object sender, EventArgs e) {
