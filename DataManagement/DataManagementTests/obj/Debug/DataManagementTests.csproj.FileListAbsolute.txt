@@ -1,0 +1,11 @@
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\obj\Debug\DataManagementTests.csprojResolveAssemblyReference.cache
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\bin\Debug\DataManagementTests.dll.config
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\bin\Debug\DataManagementTests.dll
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\bin\Debug\DataManagementTests.pdb
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\bin\Debug\DataManagement.dll
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\bin\Debug\MySql.Data.dll
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\bin\Debug\DataManagement.pdb
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\obj\Debug\DataManagementTests.dll
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\DataManagement\DataManagementTests\obj\Debug\DataManagementTests.pdb
