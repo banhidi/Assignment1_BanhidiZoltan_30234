@@ -192,7 +192,7 @@ namespace FurnitureManager {
                 OrderController oc = new OrderController();
                 ShoppingCartItem s = (ShoppingCartItem)shoppingCartGrid.SelectedRows[0].DataBoundItem;
                 Order o = (Order)orderGrid.SelectedRows[0].DataBoundItem;
-                oc.removeProductFromShoppingCart(s.productId, o.id);
+                oc.removeProductFromShoppingCart(s.productId, o.id, RegularUserName);
                 reloadOrdersTab();
                 reloadProducts();
             }

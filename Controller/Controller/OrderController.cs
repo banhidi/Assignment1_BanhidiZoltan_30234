@@ -27,6 +27,26 @@ namespace Controller {
 
             IOrderManager orderMgr = new MySqlOrderManager();
             orderMgr.addNewOrder(o);
+
+            Order orderWithId = null;
+            foreach(Order aux in orderMgr.getOrders(o.userId)) {
+                if (aux.customerName.Equals(o.customerName) && aux.deliveryAdress.Equals(o.deliveryAdress) &&
+                        aux.deliveryDate.Date.Equals(o.deliveryDate.Date) && aux.orderStatus == o.orderStatus &&
+                        aux.userId == o.userId) {
+                    orderWithId = aux;
+                    break;
+                }
+            }
+
+            IUserActivityManager activityMgr = new MySqlUserActivityManager();
+            UserActivity ua = new UserActivity();
+            
+            ua.userId = o.userId;
+            ua.itemId = (orderWithId == null) ? -1 : orderWithId.id;
+            ua.description = "insert new order (" + o.ToString() + ")";
+            ua.tableName = TableNameEnum.CustomerOrder;
+            ua.activityDateTime = DateTime.Now;
+            activityMgr.addNewUserActivity(ua);
         }
 
         public void deleteOrder(int orderId) {
@@ -36,21 +56,43 @@ namespace Controller {
                 cartMgr.removeShoppingCartItem(orderId, s.productId);
 
             IOrderManager orderMgr = new MySqlOrderManager();
+            Order o = orderMgr.getOrder(orderId);
             orderMgr.removeOrder(orderId);
+
+            IUserActivityManager activityMgr = new MySqlUserActivityManager();
+            UserActivity ua = new UserActivity();
+
+            ua.userId = o.userId;
+            ua.itemId = o.id;
+            ua.description = "delete order (" + o.ToString() + ")";
+            ua.tableName = TableNameEnum.CustomerOrder;
+            ua.activityDateTime = DateTime.Now;
+            activityMgr.addNewUserActivity(ua);
         }
 
         public void modifyOrder(int orderId, string customerName, string adress, DateTime date, bool orderStatus) {
             IOrderManager mgr = new MySqlOrderManager();
             Order o = new Order(orderId);
+            Order lastOrder = mgr.getOrder(orderId);
             o.customerName = customerName;
             o.deliveryAdress = adress;
             o.deliveryDate = date;
             o.orderStatus = orderStatus;
             
             mgr.modifyOrder(o);
+
+            IUserActivityManager activityMgr = new MySqlUserActivityManager();
+            UserActivity ua = new UserActivity();
+
+            ua.userId = lastOrder.userId;
+            ua.itemId = lastOrder.id;
+            ua.description = "modify order from (" + lastOrder.ToString() + ") to (" + o.ToString() + ")";
+            ua.tableName = TableNameEnum.CustomerOrder;
+            ua.activityDateTime = DateTime.Now;
+            activityMgr.addNewUserActivity(ua);
         }
 
-        public void addProductToOrder(int productId, int quantity, int orderId) {
+        public void addProductToOrder(int productId, int quantity, int orderId, string username) {
             IProductManager productMgr = new MySqlProductManager();
             Product p = (Product)productMgr.getProduct(productId);
 
@@ -68,9 +110,20 @@ namespace Controller {
 
             p.stock -= quantity;
             productMgr.modifyProduct(p);
+
+            IUserActivityManager activityMgr = new MySqlUserActivityManager();
+            UserActivity ua = new UserActivity();
+            IUserManager userMgr = new MySqlUserManager();
+
+            ua.userId = ((User)userMgr.getUser(username)).id;
+            ua.itemId = -1;
+            ua.description = "add to shopping cart (" + s.ToString() + ")";
+            ua.tableName = TableNameEnum.ShoppingCart;
+            ua.activityDateTime = DateTime.Now;
+            activityMgr.addNewUserActivity(ua);
         }
 
-        public void modifyProductInShoppingCart(int productId, int quantity, int orderId) {
+        public void modifyProductInShoppingCart(int productId, int quantity, int orderId, string username) {
             IProductManager productMgr = new MySqlProductManager();
             Product p = (Product)productMgr.getProduct(productId);
 
@@ -85,14 +138,26 @@ namespace Controller {
             if (quantity > p.stock + s.Quantity || quantity <= 0)
                 throw new DataManagement.Exceptions.IllegalQuantityException();
 
+            int oldQuantity = s.Quantity;
             p.stock += s.Quantity - quantity;
             s.Quantity = quantity;
 
             cartMgr.modifyShoppingCartItem(s, orderId);
             productMgr.modifyProduct(p);
+
+            IUserActivityManager activityMgr = new MySqlUserActivityManager();
+            UserActivity ua = new UserActivity();
+            IUserManager userMgr = new MySqlUserManager();
+
+            ua.userId = ((User)userMgr.getUser(username)).id;
+            ua.itemId = -1;
+            ua.description = "modify shopping cart quantity from " + oldQuantity  + " to " + quantity + " current state is (" + s.ToString() + ")";
+            ua.tableName = TableNameEnum.ShoppingCart;
+            ua.activityDateTime = DateTime.Now;
+            activityMgr.addNewUserActivity(ua);
         }
 
-        public void removeProductFromShoppingCart(int productId, int orderId) {
+        public void removeProductFromShoppingCart(int productId, int orderId, string username) {
             IProductManager productMgr = new MySqlProductManager();
             Product p = (Product)productMgr.getProduct(productId);
 
@@ -107,6 +172,17 @@ namespace Controller {
             cartMgr.removeShoppingCartItem(orderId, productId);
             p.stock += s.Quantity;
             productMgr.modifyProduct(p);
+
+            IUserActivityManager activityMgr = new MySqlUserActivityManager();
+            UserActivity ua = new UserActivity();
+            IUserManager userMgr = new MySqlUserManager();
+
+            ua.userId = ((User)userMgr.getUser(username)).id;
+            ua.itemId = -1;
+            ua.description = "remove from shopping cart item " +"(" + s.ToString() + ")";
+            ua.tableName = TableNameEnum.ShoppingCart;
+            ua.activityDateTime = DateTime.Now;
+            activityMgr.addNewUserActivity(ua);
         }
 
         public float calculateTotalPrice(int orderId) {

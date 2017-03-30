@@ -14,8 +14,8 @@ C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\Furniture
 C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.ProductForm.resources
 C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.RegularUserForm.resources
 C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.Properties.Resources.resources
+C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.ShoppingCartSelector.resources
 C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.UserForm.resources
 C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.csproj.GenerateResource.Cache
 C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.exe
 C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.pdb
-C:\Users\banhidi\Desktop\An3Sem2\PS\LabPS\Assignment1\FurnitureManager\FurnitureManager\obj\Debug\FurnitureManager.ShoppingCartSelector.resources

@@ -33,6 +33,14 @@ namespace DataManagement {
             }
         }
 
+        public override string ToString() {
+            string s = "productId=" + productId;
+            s += ", title='" + Title + "'";
+            s += ", unitPrice=" + unitPrice;
+            s += ", quantity=" + quantity;
+            return s;
+        }
+
         public ShoppingCartItem(Product p, int quantity) {
             product = p;
             if (quantity <= 0)

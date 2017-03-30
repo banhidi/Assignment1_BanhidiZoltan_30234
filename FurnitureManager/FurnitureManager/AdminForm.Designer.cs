@@ -53,7 +53,6 @@
             this.toDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fromDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.activityGrid = new System.Windows.Forms.DataGridView();
-            this.modifyAccountButton = new System.Windows.Forms.Button();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +61,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifyAccountButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userGrid)).BeginInit();
@@ -385,16 +385,6 @@
             this.activityGrid.Size = new System.Drawing.Size(628, 228);
             this.activityGrid.TabIndex = 9;
             // 
-            // modifyAccountButton
-            // 
-            this.modifyAccountButton.Location = new System.Drawing.Point(74, 12);
-            this.modifyAccountButton.Name = "modifyAccountButton";
-            this.modifyAccountButton.Size = new System.Drawing.Size(89, 23);
-            this.modifyAccountButton.TabIndex = 9;
-            this.modifyAccountButton.Text = "Modify account";
-            this.modifyAccountButton.UseVisualStyleBackColor = true;
-            this.modifyAccountButton.Click += new System.EventHandler(this.modifyAccountButton_Click);
-            // 
             // Column9
             // 
             this.Column9.DataPropertyName = "id";
@@ -450,6 +440,16 @@
             this.Column7.HeaderText = "Date & Time";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            // 
+            // modifyAccountButton
+            // 
+            this.modifyAccountButton.Location = new System.Drawing.Point(74, 12);
+            this.modifyAccountButton.Name = "modifyAccountButton";
+            this.modifyAccountButton.Size = new System.Drawing.Size(89, 23);
+            this.modifyAccountButton.TabIndex = 9;
+            this.modifyAccountButton.Text = "Modify account";
+            this.modifyAccountButton.UseVisualStyleBackColor = true;
+            this.modifyAccountButton.Click += new System.EventHandler(this.modifyAccountButton_Click);
             // 
             // AdminForm
             // 

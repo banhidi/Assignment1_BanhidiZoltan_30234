@@ -72,7 +72,7 @@ namespace FurnitureManager {
                     Controller.OrderController oc = new Controller.OrderController();
                     Product p = (Product)shoppingProductGrid.SelectedRows[0].DataBoundItem;
                     oc.addProductToOrder(p.id, (int)quantityUpDown.Value,
-                        regularUserForm.SelectedOrderId);
+                        regularUserForm.SelectedOrderId, regularUserForm.RegularUserName);
                     regularUserForm.reloadOrdersTab();
                     regularUserForm.reloadProducts();
                     regularUserForm.Enabled = true;
@@ -92,7 +92,7 @@ namespace FurnitureManager {
                 Controller.OrderController oc = new Controller.OrderController();
                 Product p = (Product)shoppingProductGrid.SelectedRows[0].DataBoundItem;
                 oc.modifyProductInShoppingCart(p.id, (int)quantityUpDown.Value,
-                    regularUserForm.SelectedOrderId);
+                    regularUserForm.SelectedOrderId, regularUserForm.RegularUserName);
                 regularUserForm.reloadOrdersTab();
                 regularUserForm.reloadProducts();
                 regularUserForm.Enabled = true;

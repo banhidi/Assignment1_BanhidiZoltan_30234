@@ -34,7 +34,9 @@ create table if not exists ShoppingCart(
 	CustomerOrderId int not null,
     ProductId int not null,
     Quantity int not null,
-    primary key (CustomerOrderId, ProductId));
+    primary key (CustomerOrderId, ProductId),
+    foreign key (CustomerOrderId) references CustomerOrder(Id),
+    foreign key (ProductId) references Product(Id));
     
 create table if not exists UserActivity(
 	Id int auto_increment primary key,

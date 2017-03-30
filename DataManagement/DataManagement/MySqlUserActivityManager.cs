@@ -73,17 +73,24 @@ namespace DataManagement {
                     if (p != null)
                         u.itemTitle = ((Product)p).title;
                     else
-                        u.itemTitle = " - ";
+                        u.itemTitle = " - ";                    
                     break;
                 case "CustomerOrder":
                     u.tableName = TableNameEnum.CustomerOrder;
-                    throw new NotImplementedException();
+                    IOrderManager orderMgr = new MySqlOrderManager();
+                    Order o = orderMgr.getOrder(u.itemId);
+                    if (o == null)
+                        u.itemTitle = " - ";
+                    else
+                        u.itemTitle = o.customerName;
                     break;
                 case "ShoppingCart":
                     u.tableName = TableNameEnum.ShoppingCart;
-                    throw new NotImplementedException();
+                    u.itemTitle = " - ";
                     break;
             }
+            IUserManager userMgr = new MySqlUserManager();
+            u.username = (string)((User)userMgr.getUser(u.userId)).username;
             u.activityDateTime = reader.GetDateTime("ActivityDateTime");
             return u;
         }

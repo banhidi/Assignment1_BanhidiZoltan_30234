@@ -20,6 +20,16 @@ namespace DataManagement {
             shoppingCart = new List<ShoppingCartItem>();
         }
 
+        public override string ToString() {
+            string s = "id=" + id.ToString();
+            s += ", customerName='" + customerName + "'";
+            s += ", deliveryAdress='" + deliveryAdress + "'";
+            s += ", deliveryDate=" + deliveryDate.ToString("yyyy-MM-dd");
+            s += ", orderStatus=" + orderStatus.ToString();
+            s += ", userId=" + userId.ToString();
+            return s;
+        }
+
         public Order(int id, IList<ShoppingCartItem> list) {
             this.id = id;
             shoppingCart = list;
